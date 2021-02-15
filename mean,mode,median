@@ -1,0 +1,34 @@
+def mean(arr , n):
+    res = sum(arr)/n
+    return res
+
+def median(arr , n):
+    result = 0
+    midTerm = n/2
+    if(isinstance(midTerm,int)):
+        return arr[midTerm]
+    else:
+        return (arr[int(midTerm)] + arr[int(midTerm)-1])/2
+    
+def mode(arr , n):
+    logBook = dict()
+    for i in arr:
+        if i in logBook.keys():
+            logBook[i] += 1
+        else:
+            logBook[i] = 1
+    maxOcur = max(logBook.values())
+    mode = []
+    for i in logBook.keys():
+        if(logBook[i] == maxOcur):
+            mode.append(i)
+    return min(mode)
+            
+    
+n = int(input())
+ar = list(map(int, input().split()))
+arr = sorted(ar)
+print(mean(arr,n))
+print(median(arr,n))
+print(mode(arr,n))
+    
