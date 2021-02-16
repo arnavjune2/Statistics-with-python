@@ -1,0 +1,11 @@
+def weightedMean(n,data,weights):
+    Wmean = 0
+    for i in range(n):
+        Wmean += data[i] * weights[i]
+        
+    return round(Wmean/sum(weights) , 1)
+
+n = int(input())
+data = list(map(int , input().split()))
+weights = list(map(int , input().split()))
+print(weightedMean(n,data,weights))
