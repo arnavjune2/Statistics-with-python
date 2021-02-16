@@ -1,0 +1,17 @@
+import statistics as st
+def quartile(arr , n):
+    sorted(arr)
+    
+    Q2 = int(st.median(arr))
+    arr1 = [x for x in arr if x<Q2]
+    arr2 = [x for x in arr if x>Q2]
+    Q1 = int(st.median(arr1))
+    Q3 = int(st.median(arr2))
+    
+    print(Q1)
+    print(Q2)
+    print(Q3)
+        
+n = int(input())
+data = list(map(int , input().split()))
+quartile(data,n)
