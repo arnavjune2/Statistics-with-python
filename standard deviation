@@ -1,0 +1,17 @@
+import statistics as st
+
+from math import sqrt
+def standarDev(n , data):
+    mu = st.mean(data)
+    temp = 0
+    for i in range(n):
+        temp += (data[i] - mu) **2
+        
+    varience = temp/n
+    
+    return round(sqrt(varience) , 1)
+    
+
+n = int(input())
+data = list(map(int, input().strip().split()))
+print(standarDev(n ,data))
